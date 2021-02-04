@@ -1,0 +1,85 @@
+[
+    {
+      "idIntegracao": "444",
+      "presencial": true,
+      "consumidorFinal": true,
+      "natureza": "OPERAÇÃO INTERNA",
+      "emitente": {
+        "cpfCnpj": "58896213000123"
+      },
+      "destinatario": {
+        "cpfCnpj": "58896213000123",
+        "razaoSocial": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "email": "contato@tecnospeed.com.br",
+        "endereco": {
+          "logradouro": "Testes notas com axios",
+          "numero": "111111",
+          "bairro": "CENTRO",
+          "codigoCidade": "4115200",
+          "descricaoCidade": "MARINGA",
+          "estado": "PR",
+          "cep": "87020025"
+        }
+      },
+      "itens": [
+        {
+          "codigo": "10",
+          "descricao": "NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+          "ncm": "06029090",
+          "cest": "0123456",
+          "cfop": "5101",
+          "valorUnitario": {
+            "comercial": 4.6,
+            "tributavel": 4.6
+          },
+          "valor": 4.6,
+          "tributos": {
+            "icms": {
+              "origem": "0",
+              "cst": "00",
+              "baseCalculo": {
+                "modalidadeDeterminacao": 0,
+                "valor": 0
+              },
+              "aliquota": 0,
+              "valor": 0
+            },
+            "pis": {
+              "cst": "99",
+              "baseCalculo": {
+                "valor": 0,
+                "quantidade": 0
+              },
+              "aliquota": 0,
+              "valor": 0
+            },
+            "cofins": {
+              "cst": "07",
+              "baseCalculo": {
+                "valor": 0
+              },
+              "aliquota": 0,
+              "valor": 0
+            }
+          }
+        }
+      ],
+      "pagamentos": [
+        {
+          "aVista": true,
+          "meio": "01",
+          "valor": 4.6
+        }
+      ],
+      "responsavelTecnico": {
+        "cpfCnpj": "36358569000170",
+        "nome": "TestePlugNotas",
+        "email": "contato@tecnospeed.com.br",
+        "telefone": {
+          "ddd": "44",
+          "numero": "30379500"
+        }
+      }
+    }
+  ]
+  

@@ -1,0 +1,85 @@
+{
+    "cpfCnpj": "76927988000109",
+    "inscricaoMunicipal": "1111111111",
+    "inscricaoEstadual": "2222222222",
+    "razaoSocial": "Teste axios cadastro Empresa",
+    "nomeFantasia": "Teste01",
+    "certificado": "5af59d271f6e8f409178fbf3",
+    "simplesNacional": true,
+    "regimeTributario": 1,
+    "incentivoFiscal": true,
+    "incentivadorCultural": true,
+    "regimeTributarioEspecial": 5,
+    "endereco": {
+      "tipoLogradouro": "Teste axios cadastro Empresa",
+      "logradouro": "Teste axios cadastro Empresa",
+      "numero": "1111111111",
+      "complemento": "Teste axios cadastro Empresa",
+      "tipoBairro": "Teste axios cadastro Empresa",
+      "bairro": "Teste axios cadastro Empresa",
+      "codigoPais": "1058",
+      "descricaoPais": "Brasil",
+      "codigoCidade": "4115200",
+      "descricaoCidade": "Maringá",
+      "estado": "PR",
+      "cep": "87023490"
+    },
+    "telefone": {
+      "ddd": "44",
+      "numero": "10101010"
+    },
+    "email": "emailteste01@testeplugnotas.com.br",
+    "nfse": {
+      "ativo": true,
+      "tipoContrato": 0,
+      "config": {
+        "producao": true,
+        "rps": {
+          "serie": "RPS",
+          "numero": 1,
+          "lote": 1
+        },
+        "prefeitura": {
+          "login": "teste1",
+          "senha": "teste123"
+        },
+        "email": {
+          "envio": true
+        }
+      }
+    },
+    "nfe": {
+      "ativo": true,
+      "tipoContrato": 0,
+      "config": {
+        "producao": true,
+        "impressaoFcp": true,
+        "impressaoPartilha": true,
+        "serie": 1,
+        "numero": 1,
+        "dfe": {
+          "ativo": true
+        },
+        "email": {
+          "envio": true
+        }
+      }
+    },
+    "nfce": {
+      "ativo": true,
+      "tipoContrato": 0,
+      "config": {
+        "producao": true,
+        "serie": 1,
+        "numero": 1,
+        "email": {
+          "envio": true
+        },
+        "sefaz": {
+          "idCodigoSegurancaContribuinte": "string",
+          "codigoSegurancaContribuinte": "string"
+        }
+      }
+    }
+  }
+  
