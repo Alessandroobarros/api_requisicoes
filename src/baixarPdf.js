@@ -1,4 +1,6 @@
-'use strict';
+/* eslint-env es6 */
+/* eslint-disable no-console */
+'use strict'
 
 const Fs = require('fs');
 const Path = require('path');

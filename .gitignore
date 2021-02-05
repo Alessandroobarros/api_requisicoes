@@ -1,3 +1,4 @@
 arquivos/**.pfx
 dowloads/**
 .env
+node_modules
