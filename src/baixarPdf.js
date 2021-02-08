@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-'use strict'
+// 'use strict'
 
 const Fs = require('fs');
 const Path = require('path');
@@ -29,4 +29,4 @@ async function downloadPdf() {
     writer.on('error', reject)
   })
 }
-downloadPdf()  
+downloadPdf()

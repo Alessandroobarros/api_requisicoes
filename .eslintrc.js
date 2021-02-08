@@ -5,14 +5,15 @@ module.exports = {
     },
     extends: ['airbnb-base', 'prettier'],
     plugins: ['prettier'],
-    
+    "parser": "babel-eslint",
+
     globals: {
       Atomics: 'readonly',
       SharedArrayBuffer: 'readonly',
     },
 
     "parserOptions": {
-        "ecmaVersion": 12,
+        "ecmaVersion": 9,
         "sourceType": "module"
     },
     "rules": {

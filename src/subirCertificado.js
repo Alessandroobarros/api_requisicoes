@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-'use strict'
+// 'use strict'
 
 const Fs = require('fs')
 const Path = require('path')
@@ -9,7 +9,7 @@ const FormData = require('form-data')
 require ('dotenv').config()
 
 
-async function uploadCertificate() {
+async function uploadCertificate(){
   try {
     const url = (process.env.CERTIFICADO)
     const data = new FormData();
@@ -33,9 +33,8 @@ async function uploadCertificate() {
 
     return response.data
   } catch (error) {
-    console.error(error)
+    return console.error(error)
   }
-
 }
 
 uploadCertificate()

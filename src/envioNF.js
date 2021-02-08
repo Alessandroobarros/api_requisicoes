@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-'use strict'
+// 'use strict'
 
 const axios = require("axios");
 const data = require('../arquivos/dadosNota.json');
@@ -12,9 +12,9 @@ async function envioNotas() {
     url: (process.env.URL_NOTA),
     headers: {
       'X-API-KEY': (process.env.SENHA_API),
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    data: data
+    data: data,
   };
 
   axios(config)
@@ -26,5 +26,5 @@ async function envioNotas() {
       console.log(error);
     });
   }
-  
+
   envioNotas()

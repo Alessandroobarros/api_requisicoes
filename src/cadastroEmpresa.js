@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-'use strict'
+// 'use strict'
 
 const axios = require("axios");
 const data = require('../arquivos/dadosEmpresa.json');
@@ -15,7 +15,7 @@ async function cadastroEmpresa() {
       'X-API-KEY': (process.env.SENHA_API),
       'Content-Type': 'application/json'
     },
-    data: data
+    data: data,
   };
 
   axios(config)
@@ -27,4 +27,4 @@ async function cadastroEmpresa() {
     });
 }
 
-cadastroEmpresa()  
+cadastroEmpresa()
