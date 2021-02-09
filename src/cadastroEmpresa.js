@@ -2,32 +2,28 @@
 /* eslint-disable no-console */
 // 'use strict'
 
-//TODO: Externalizar o config
-//TODO: Simplificar o data: data
-//TODO: Usar async await ao invés de promise
-
-const axios = require("axios");
-const data = require('../arquivos/dadosEmpresa.json');
-require ('dotenv').config()
+const axios = require("axios"); /* importação do axios para fazer requisiões */
+const data = require('../arquivos/dadosEmpresa.json'); /* importação do arquivo com os dados de cadastro */
+const env = require('../arquivos/config') /* importação do arquivo config */
 
 
 async function cadastroEmpresa() {
   const config = {
     method: 'post',
-    url: (process.env.URL_CAD_EMPRESA),
+    url: env.cadastroEmpresa, /* variavel externa do arquivo config */
     headers: {
-      'X-API-KEY': (process.env.SENHA_API),
+      'X-API-KEY': env.senha.senha,  /* variavel externa do arquivo config */
       'Content-Type': 'application/json'
     },
-    data: data,
+    data, /* data reduzida */
   };
 
   axios(config)
-    .then(function (response) {
-      return console.log(JSON.stringify(response.data))
+    .then( (response) =>{
+      console.log(JSON.stringify(response.data))
     })
-    .catch(function (error) {
-      return console.log(error);
+    .catch( (error) => {
+      console.log(error);
     });
 }
 
