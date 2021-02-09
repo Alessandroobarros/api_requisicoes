@@ -1,6 +1,5 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
 
 const Fs = require('fs') /* importação do modulo file system para trabalhar com arquivos */
 const Path = require('path') /* importação do modulo Path para usar diretorios e caminhos */
@@ -17,7 +16,7 @@ async function uploadCertificate(){
     const path = Path.resolve(__dirname,'../arquivos', 'certificadoPEM.pfx') /* caminho do diretorio para puxar arquivo */
 
     data.append('arquivo', Fs.createReadStream(path));
-    data.append('senha', (config.senha.senha)); /* variavel externa do arquivo config */
+    data.append('senha', (config.senha.senhaCertificado)); /* variavel externa do arquivo config */
 
     const response = await Axios({
       url,

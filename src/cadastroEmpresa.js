@@ -1,6 +1,5 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
 
 const axios = require("axios"); /* importação do axios para fazer requisiões */
 const data = require('../arquivos/dadosEmpresa.json'); /* importação do arquivo com os dados de cadastro */

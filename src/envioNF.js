@@ -1,7 +1,5 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
-
 /* TODO: Usar async await ao invés de promise */
 
 const axios = require('axios'); /* importação do axios para fazer requisiões */
@@ -11,7 +9,7 @@ const env = require('../arquivos/config') /* importação do arquivo config */
 async function envioNotas() {
     const config = {
         method: 'post',
-        url: env.ENV_NOTA, /* variavel externa do arquivo config */
+        url: env.Url.ENV_NOTA, /* variavel externa do arquivo config */
         headers: {
             'X-API-KEY': env.senha.senha, /* variavel externa do arquivo config */
             'Content-Type': 'application/json',

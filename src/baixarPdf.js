@@ -1,6 +1,5 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
 
 const Fs = require('fs'); /* importação do modulo file system para trabalhar com arquivos */
 const Path = require('path'); /* importação do modulo Path para usar diretorios e caminhos */

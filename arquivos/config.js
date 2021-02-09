@@ -14,8 +14,8 @@ module.exports = {
     },
     senha: {
         senha: process.env.SENHA_API,
+        senhaCertificado: process.env.CERTIFICADO_KEY
     },
-
 
 };
 
