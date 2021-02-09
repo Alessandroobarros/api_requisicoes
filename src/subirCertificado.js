@@ -1,7 +1,7 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
 // 'use strict'
-
+//TODO: Externalizar o config
 const Fs = require('fs')
 const Path = require('path')
 const Axios = require('axios')

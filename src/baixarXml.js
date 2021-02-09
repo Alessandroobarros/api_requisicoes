@@ -7,6 +7,7 @@ const Path = require('path')
 const Axios = require('axios')
 require ('dotenv').config()
 
+//TODO: Externalizar o config
 
 async function downloadXml() {
   const url = (process.env.URL_XML)

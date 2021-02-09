@@ -2,6 +2,10 @@
 /* eslint-disable no-console */
 // 'use strict'
 
+//TODO: Externalizar o config
+//TODO: Simplificar o data: data
+//TODO: Usar async await ao invés de promise
+
 const axios = require("axios");
 const data = require('../arquivos/dadosEmpresa.json');
 require ('dotenv').config()
