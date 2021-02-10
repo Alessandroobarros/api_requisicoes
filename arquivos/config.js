@@ -13,8 +13,8 @@ module.exports = {
         SUB_CERTIFICADO: env.CERTIFICADO
     },
     senha: {
-        senha: process.env.SENHA_API,
-        senhaCertificado: process.env.CERTIFICADO_KEY
+        API: env.SENHA_API,
+        CERTIFICADO: env.CERTIFICADO_KEY
     },
 
 };
