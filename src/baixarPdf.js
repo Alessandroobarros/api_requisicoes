@@ -4,28 +4,33 @@
 const Fs = require('fs'); /* importação do modulo file system para trabalhar com arquivos */
 const Path = require('path'); /* importação do modulo Path para usar diretorios e caminhos */
 const Axios = require('axios'); /* importação do axios para fazer requisiões */
-const config = require('../arquivos/config') /* importação do arquivo config */
-
+const config = require('../arquivos/config'); /* importação do arquivo config */
 
 async function downloadPdf() {
-    const url = (config.Url.PDF); /* variavel externa do arquivo config */
-    const path = Path.resolve(__dirname, '../dowloads', 'nota.pdf'); /* caminho do diretorio para dowload */
+    const url = config.Url.PDF; /* variavel externa do arquivo config */
+    const path = Path.resolve(
+        __dirname,
+        '../dowloads',
+        'nota.pdf'
+    ); /* caminho do diretorio para dowload */
     const writer = Fs.createWriteStream(path);
 
-    const response = await Axios({
+    const configure = ({
         url,
         method: 'GET',
         headers: {
-            'X-API-KEY': config.senha.senha, /* variavel externa do arquivo config */
+            'X-API-KEY':
+                config.senha.senha /* variavel externa do arquivo config */,
         },
         responseType: 'stream',
     });
 
-    response.data.pipe(writer);
-
-    return new Promise((resolve, reject) => {
-        writer.on('finish', resolve);
-        writer.on('error', reject);
-    });
+    Axios(configure)
+        .then((response) => {
+            response.data.pipe(writer);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 downloadPdf();

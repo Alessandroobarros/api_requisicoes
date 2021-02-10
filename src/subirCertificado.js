@@ -27,8 +27,6 @@ async function uploadCertificate(){
         ...data.getHeaders()
       },
     })
-
-    console.log(JSON.stringify(response.status))
     console.log(JSON.stringify(response.data))
 
     return response.data

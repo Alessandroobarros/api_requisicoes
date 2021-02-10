@@ -1,6 +1,5 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-/* TODO: Usar async await ao invés de promise */
 
 const axios = require('axios'); /* importação do axios para fazer requisiões */
 const data = require('../arquivos/dadosNota.json'); /* importação do arquivo com os dados da nota */

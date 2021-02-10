@@ -11,21 +11,23 @@ async function downloadXml() {
     const path = Path.resolve(__dirname, '../dowloads', 'nota.xml'); /* caminho do diretorio para dowload */
     const writer = Fs.createWriteStream(path);
 
-    const response = await Axios({
+    const configure = ({
         url,
         method: 'GET',
         headers: {
             'X-API-KEY': config.senha.senha /* variavel externa do arquivo config */
         },
         responseType: 'stream',
-    });
+    })
 
-    response.data.pipe(writer);
 
-    return new Promise((resolve, reject) => {
-        writer.on('finish', resolve);
-        writer.on('error', reject);
-    });
+    Axios(configure)
+    .then( (response) =>{
+        response.data.pipe(writer)
+      })
+      .catch( (error) => {
+        console.log(error);
+      });
 }
 
 downloadXml();
