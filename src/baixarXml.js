@@ -1,32 +1,30 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
 
-const Fs = require('fs'); /* importação do modulo file system para trabalhar com arquivos */
-const Path = require('path'); /* importação do modulo Path para usar diretorios e caminhos */
-const Axios = require('axios'); /* importação do axios para fazer requisiões */
-const config = require('../arquivos/config') /* importação do arquivo config */
+const Fs = require('fs');
+const Path = require('path');
+const axios = require('axios');
+const env = require('../arquivos/config');
 
 async function downloadXml() {
-    const url = config.Url.XML /* variavel externa do arquivo config */
-    const path = Path.resolve(__dirname, '../dowloads', 'nota.xml'); /* caminho do diretorio para dowload */
-    const writer = Fs.createWriteStream(path);
+    try {
+        const url = env.Url.XML;
+        const path = Path.resolve(__dirname, '../dowloads', 'nota.xml');
+        const writer = Fs.createWriteStream(path);
 
-    const response = await Axios({
-        url,
-        method: 'GET',
-        headers: {
-            'X-API-KEY': config.senha.senha /* variavel externa do arquivo config */
-        },
-        responseType: 'stream',
-    });
+        const response = await axios({
+            url,
+            method: 'GET',
+            headers: {
+                'X-API-KEY': env.senha.API,
+            },
+            responseType: 'stream',
+        });
 
-    response.data.pipe(writer);
-
-    return new Promise((resolve, reject) => {
-        writer.on('finish', resolve);
-        writer.on('error', reject);
-    });
+        return response.data.pipe(writer);
+    } catch (error) {
+        return console.log(error);
+    }
 }
 
 downloadXml();

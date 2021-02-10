@@ -1,30 +1,27 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
-// 'use strict'
 
-const axios = require("axios"); /* importação do axios para fazer requisiões */
-const data = require('../arquivos/dadosEmpresa.json'); /* importação do arquivo com os dados de cadastro */
-const env = require('../arquivos/config') /* importação do arquivo config */
-
+const axios = require('axios');
+const data = require('../arquivos/dadosEmpresa.json');
+const env = require('../arquivos/config');
 
 async function cadastroEmpresa() {
-  const config = {
-    method: 'post',
-    url: env.cadastroEmpresa, /* variavel externa do arquivo config */
-    headers: {
-      'X-API-KEY': env.senha.senha,  /* variavel externa do arquivo config */
-      'Content-Type': 'application/json'
-    },
-    data, /* data reduzida */
-  };
+    try {
+        const response = await axios({
+            method: 'post',
+            url: env.Url.CAD_EMPRESA,
+            headers: {
+                'X-API-KEY': env.senha.API,
+                'Content-Type': 'application/json',
+            },
+            data,
+        });
 
-  axios(config)
-    .then( (response) =>{
-      console.log(JSON.stringify(response.data))
-    })
-    .catch( (error) => {
-      console.log(error);
-    });
+        console.log(JSON.stringify(response.data));
+        return response.data;
+    } catch (error) {
+        return console.log(error);
+    }
 }
 
-cadastroEmpresa()
+cadastroEmpresa();
