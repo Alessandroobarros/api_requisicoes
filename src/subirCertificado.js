@@ -27,7 +27,6 @@ async function uploadCertificate(){
       },
     })
     console.log(JSON.stringify(response.data))
-
     return response.data
   } catch (error) {
     return console.error(error)

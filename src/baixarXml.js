@@ -6,7 +6,6 @@ const Path = require('path');
 const axios = require('axios');
 const env = require('../arquivos/config');
 
-
 async function downloadXml() {
     try {
         const url = env.Url.XML;
