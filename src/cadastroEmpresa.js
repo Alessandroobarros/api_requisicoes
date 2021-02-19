@@ -2,14 +2,15 @@
 /* eslint-disable no-console */
 
 const axios = require('axios');
-const data = require('../arquivos/dadosEmpresa.json');
 const env = require('../arquivos/config');
 
-async function cadastroEmpresa() {
+
+async function cadastroEmpresa(data) {
     try {
+        const url = env.Url;
         const response = await axios({
             method: 'post',
-            url: env.Url.CAD_EMPRESA,
+            url: `${url}/empresa`,
             headers: {
                 'X-API-KEY': env.senha.API,
                 'Content-Type': 'application/json',
@@ -17,11 +18,9 @@ async function cadastroEmpresa() {
             data,
         });
 
-        console.log(JSON.stringify(response.data));
         return response.data;
     } catch (error) {
-        return console.log(error);
+        throw new Error(error)
     }
 }
-
-cadastroEmpresa();
+module.exports = cadastroEmpresa

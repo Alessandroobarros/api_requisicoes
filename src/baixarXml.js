@@ -1,19 +1,15 @@
 /* eslint-env es6 */
 /* eslint-disable no-console */
 
-const Fs = require('fs');
-const Path = require('path');
 const axios = require('axios');
 const env = require('../arquivos/config');
 
-async function downloadXml() {
-    try {
-        const url = env.Url.XML;
-        const path = Path.resolve(__dirname, '../dowloads', 'nota.xml');
-        const writer = Fs.createWriteStream(path);
 
+async function downloadXml(id) {
+    try {
+        const url = env.Url;
         const response = await axios({
-            url,
+            url: `${url}/nfe/${id}/xml`,
             method: 'GET',
             headers: {
                 'X-API-KEY': env.senha.API,
@@ -21,10 +17,9 @@ async function downloadXml() {
             responseType: 'stream',
         });
 
-        return response.data.pipe(writer);
+        return response.data;
     } catch (error) {
-        return console.log(error);
+        throw new Error(error)
     }
 }
-
-downloadXml();
+module.exports = downloadXml
