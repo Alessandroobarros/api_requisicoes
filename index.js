@@ -1,10 +1,8 @@
-// const Path = require ('path')
-// const Fs = require('fs')
-// const dowloadPdf = require ('./baixarPdf')
-// const dowXml = require ('./baixarXml')
-// const cadEmpresa = require('./cadastroEmpresa')
-// const nf = require('./envioNF')
-// const cadCert = require('./subirCertificado')
+const dowloadPdf = require ('./baixarPdf')
+const dowXml = require ('./baixarXml')
+const cadEmpresa = require('./cadastroEmpresa')
+const nf = require('./envioNF')
+const cadCert = require('./subirCertificado')
 
 
 // async function main() {
